@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Paycoll API Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;HTTP&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="HTTP">HTTP</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -225,24 +222,78 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#format" class="toc-h1 toc-link" data-title="Format">Format</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Kittens">Get All Kittens</a>
+                    <a href="#headers" class="toc-h2 toc-link" data-title="Format">Headers</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Kittens">Delete a Specific Kitten</a>
+                    <a href="#response" class="toc-h2 toc-link" data-title="Format">Response</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#error-references" class="toc-h1 toc-link" data-title="Error References">Error References</a>
+          </li>
+          <li>
+            <a href="#general" class="toc-h1 toc-link" data-title="General">General</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#general-update-password" class="toc-h2 toc-link" data-title="General">GENERAL :: UPDATE PASSWORD</a>
+                  </li>
+                  <li>
+                    <a href="#general-app-setting" class="toc-h2 toc-link" data-title="General">GENERAL :: APP SETTING</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#toko" class="toc-h1 toc-link" data-title="Toko">Toko</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#toko-login" class="toc-h2 toc-link" data-title="Toko">TOKO :: LOGIN</a>
+                  </li>
+                  <li>
+                    <a href="#toko-detail-toko" class="toc-h2 toc-link" data-title="Toko">TOKO :: DETAIL TOKO</a>
+                  </li>
+                  <li>
+                    <a href="#toko-summary-piutang" class="toc-h2 toc-link" data-title="Toko">TOKO :: SUMMARY PIUTANG</a>
+                  </li>
+                  <li>
+                    <a href="#toko-request-dikunjungi" class="toc-h2 toc-link" data-title="Toko">TOKO :: REQUEST DIKUNJUNGI</a>
+                  </li>
+                  <li>
+                    <a href="#toko-request-dikunjungi-list" class="toc-h2 toc-link" data-title="Toko">TOKO :: REQUEST DIKUNJUNGI LIST</a>
+                  </li>
+                  <li>
+                    <a href="#toko-list-bank" class="toc-h2 toc-link" data-title="Toko">TOKO :: LIST BANK</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#collector" class="toc-h1 toc-link" data-title="Collector">Collector</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#collector-login" class="toc-h2 toc-link" data-title="Collector">COLLECTOR :: LOGIN</a>
+                  </li>
+                  <li>
+                    <a href="#collector-setor-post" class="toc-h2 toc-link" data-title="Collector">COLLECTOR :: SETOR (POST)</a>
+                  </li>
+                  <li>
+                    <a href="#collector-setor-uang" class="toc-h2 toc-link" data-title="Collector">COLLECTOR :: SETOR UANG</a>
+                  </li>
+                  <li>
+                    <a href="#collector-bayar" class="toc-h2 toc-link" data-title="Collector">COLLECTOR :: BAYAR</a>
+                  </li>
+                  <li>
+                    <a href="#collector-status-pembayaran" class="toc-h2 toc-link" data-title="Collector">COLLECTOR :: STATUS PEMBAYARAN</a>
+                  </li>
+                  <li>
+                    <a href="#collector-hasil-tagihan" class="toc-h2 toc-link" data-title="Collector">COLLECTOR :: HASIL TAGIHAN</a>
+                  </li>
+                  <li>
+                    <a href="#collector-register-index" class="toc-h2 toc-link" data-title="Collector">COLLECTOR :: REGISTER INDEX</a>
+                  </li>
+              </ul>
           </li>
       </div>
         <ul class="toc-footer">
@@ -254,248 +305,2032 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>Payment Collection (Paycoll) adalah .....</p>
 
 <p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<h1 id='format'>Format</h1>
+<p>Kita menggunakan JSON untuk semua request dan responses.</p>
+<h2 id='headers'>Headers</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Headers :</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight json tab-json"><code><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span><span class="err">apikey</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">client_secret</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Untuk dapat berhasil berkomunikasi dengan Paycoll API, anda harus menyediakan
+header berikut di beberapa API request:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe</th>
+<th>Deskipsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>Alphanumeric</td>
+<td>Konten dari request body anda. e.g application/json</td>
+</tr>
+<tr>
+<td>accesstoken</td>
+<td>Alphanumeric</td>
+<td>Token Format value</td>
+</tr>
+<tr>
+<td>apikey</td>
+<td>Alphanumeric</td>
+<td>API Key anda</td>
+</tr>
+</tbody></table>
+<h2 id='response'>Response</h2>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Contoh Response :</p>
 </blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"appsetting"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"keyid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url website"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.tokoonderdilmurah.com</span><span class="se">\/</span><span class="s2">"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">   
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>Untuk format response kita menggunakan format JSEND</p>
+
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Deskipsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Ada 4 tipe status pada response <code>success,fail,error</code> .</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data adalah output dari request anda.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>message akan menampilkan status <code>fail</code> dan <code>error</code> .</td>
+</tr>
+<tr>
+<td>request</td>
+<td>Parameter request akan return jika status <code>fail</code> .</td>
+</tr>
+</tbody></table>
+<h1 id='error-references'>Error References</h1><h1 id='general'>General</h1>
+<p>Terdiri dari beberapa endpoint yang dapat digunakan oleh semua tipe user (Toko, maupun Collector)</p>
+<h2 id='general-update-password'>GENERAL :: UPDATE PASSWORD</h2>
+<p>Endpoint ini digunakan oleh user untuk mengupdate password. Request anda harus berisi informasi berikut</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p><code>POST http://paycoll.javasign.id/api/toko/password/update</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+
+
+
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"password_lama"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password_baru"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin1234"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request'>Request</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Required</th>
+<th>Deskripsi</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>passwordlama</td>
+<td>string</td>
+<td>Y</td>
+<td>Password lama user</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>passwordbaru</td>
+<td>string</td>
+<td>Y</td>
+<td>Password baru user</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password has been updated"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"userinfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C-09106"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJpdiI6Ikt1NnUxN3pNbEdBUFQ5Y1wvUHJOdVlBPT0iLCJ2YWx1ZSI6IjJCZVNPVUVCTWhWRG5ia1h4azZ1SUE9PSIsIm1hYyI6IjM3MGRkZTY1ZGYyYjZmOGZmZTFkYTcxZmZlZTBhZWE0ZjNiZWE4NzUyNGE4MWNiMDU5MDlkZWVkY2M2NjdlMDkifQ=="</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"typeuser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collector"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"api_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aAU7XGzxjaZxYMwSD5HfeKRBX0otzV42yc9JcJmiXxa22UY4CdxRIj000308"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"remember_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"userid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-30 14:23:25"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastupdatedby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-19 08:30:53"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+</span></code></pre><h3 id='response-2'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>username untuk user</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Password untuk user</td>
+</tr>
+<tr>
+<td>typeuser</td>
+<td>string</td>
+<td>Tipe user, apakah toko atau collector</td>
+</tr>
+<tr>
+<td>api_token</td>
+<td>string</td>
+<td>Encrypted text dari user yang dijadikan identifikasi saat request</td>
+</tr>
+<tr>
+<td>status</td>
+<td>boolean</td>
+<td>Status user ketika login, jika benar maka true, jika tidak maka false</td>
+</tr>
+<tr>
+<td>remember_token</td>
+<td>string</td>
+<td>Untuk fitur remember login</td>
+</tr>
+<tr>
+<td>userid</td>
+<td>integer</td>
+<td>Jika login sebagai toko maka id toko, jika login sebagai collector maka id collector</td>
+</tr>
+<tr>
+<td>createdby</td>
+<td>string</td>
+<td>Yang membuat user</td>
+</tr>
+<tr>
+<td>createdon</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika user dibuat</td>
+</tr>
+<tr>
+<td>lastupdateby</td>
+<td>string</td>
+<td>Yang terakhir mengupdate updated_at datetime Tanggal dan waktu ketika user diupdate</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika user diupdate</td>
+</tr>
+</tbody></table>
+<h2 id='general-app-setting'>GENERAL :: APP SETTING</h2>
+<p>Endpoint ini memberikan informasi tentang aplikasi Paycoll.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p><code>POST http://paycoll.javasign.id/api/app-setting</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-2'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"appsetting"</span><span class="p">:[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"keyid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"URL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url website"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">www.tokoonderdilmurah.com</span><span class="se">\/</span><span class="s2">"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">   
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+</span></code></pre><h3 id='response-3'>Response</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td><strong>appsetting</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>keyid</td>
+<td>string</td>
+<td>Key id</td>
+</tr>
+<tr>
+<td>keterangan</td>
+<td>string</td>
+<td>Keterangan</td>
+</tr>
+<tr>
+<td>value</td>
+<td>url</td>
+<td>Value</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<h1 id='toko'>Toko</h1>
+<p>Client dari perusahaan sparepart kendaraan bermotor yang menggunakan API Paycoll.</p>
+<h2 id='toko-login'>TOKO :: LOGIN</h2>
+<p>Endpoint ini digunakan oleh user untuk login, dan ketika return client akan mendapatkan <code>api_token</code> . Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST http://paycoll.javasign.id/api/login</code></p>
 
-<p>The Kittn API uses the following error codes:</p>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">apikey</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">client_secret</span><span class="p">]</span><span class="w">
 
+
+
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andreastesting"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin123"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-3'>Request</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Required</th>
+<th>Deskripsi</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks</td>
+<td>username</td>
+<td>string</td>
+<td>Y</td>
+<td>username untuk user</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong</td>
+<td>password</td>
+<td>string</td>
+<td>Y</td>
+<td>password untuk user</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"userinfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andreastesting"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJpdiI6IkJTc2o3dkhqaXpkb0F6TVc3YkRWUWc9PSIsInZhbHVlIjoibjhDUUwrSjVEcUpWckluNmdDM2dcL0E9PSIsIm1hYyI6ImVhMjk1YmQ0MTIxOTkzNTAxM2RiY2JlNzZjNGQ1YzcyNTEwNDcxOWFlYThlZWFhMzA1YWJjODdiNGE4MWY5ZTcifQ=="</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"typeuser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toko"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"api_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aAU7XGzxjaZxYMwSD5HfeKRBX0otzV42yc9JcJmiXxa22UY4CdxRIj000301"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"remember_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"userid"</span><span class="p">:</span><span class="w"> </span><span class="mi">20970</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-30 14:23:25"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastupdatedby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-05 08:27:41"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namatoko"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PINJAMAN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"alamat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JL. KAYU PUTIH TENGAH 1B NO.3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"propinsi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DKI Jakarta"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"kota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JAKARTA TIMUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"kecamatan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KAYU PUTIH"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"telp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899161"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tipebisnis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARTAI"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-4'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only</td>
+<td>username</td>
+<td>string</td>
+<td>username untuk user</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found</td>
+<td>password</td>
+<td>string</td>
+<td>Password untuk user</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method</td>
+<td>typeuser</td>
+<td>string</td>
+<td>Tipe user, apakah toko atau collector</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json</td>
+<td>api_token</td>
+<td>string</td>
+<td>Encrypted text dari user yang dijadikan identifikasi saat request</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers</td>
+<td>status</td>
+<td>boolean</td>
+<td>Status user ketika login, jika benar maka true, jika tidak maka false</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot</td>
+<td>remember_token</td>
+<td>string</td>
+<td>Untuk fitur remember login</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>userid</td>
+<td>integer</td>
+<td>Jika login sebagai toko maka id toko, jika login sebagai collector maka id collector</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>createdby</td>
+<td>string</td>
+<td>Yang membuat user</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>createdon</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika user dibuat</td>
+</tr>
+<tr>
+<td>lastupdateby</td>
+<td>string</td>
+<td>Yang terakhir mengupdate updated_at datetime Tanggal dan waktu ketika user diupdate</td>
+</tr>
+<tr>
+<td>namatoko</td>
+<td>string</td>
+<td>Nama toko user</td>
+</tr>
+<tr>
+<td>alamat</td>
+<td>string</td>
+<td>Alamat user</td>
+</tr>
+<tr>
+<td>propinsi</td>
+<td>string</td>
+<td>Propinsi user</td>
+</tr>
+<tr>
+<td>kota</td>
+<td>string</td>
+<td>Kota user</td>
+</tr>
+<tr>
+<td>kecamatan</td>
+<td>string</td>
+<td>Kecamatan user</td>
+</tr>
+<tr>
+<td>telp</td>
+<td>string</td>
+<td>Nomor telepon user</td>
+</tr>
+<tr>
+<td>tipebisnis</td>
+<td>string</td>
+<td>Tipe bisnis user</td>
+</tr>
+</tbody></table>
+<h2 id='toko-detail-toko'>TOKO :: DETAIL TOKO</h2>
+<p>Endpoint ini menampilkan semua info data detail toko. Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST http://paycoll.javasign.id/api/login</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-4'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20886</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tokoidwarisan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9902348"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tokoidwarisanlama"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9902348"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"kodetoko"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C112014101416:30:47"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namatoko"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUANA ABADI MOTOR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"alamat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JL.RAYA PARDASUKA PRINGSEWU KERBANG PARDASUKA KODE POS 36382"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"propinsi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAMPUNG"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"kota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRINGSEWU"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"kecamatan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRINGSEWU"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customwilayah"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DA-0614"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"telp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07297014195"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"penanggungjawab"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KO ALUN(ALUNDRA WIJA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tgldob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-02-20"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"catatan"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"statusaktif"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"pemilik"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KO ALUN(ALUNDRA WIJAYA)"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tempatlahir"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tgllahir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-12"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"norekening"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namabank"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nonpwp"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tipebisnis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARTAI"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"isarowid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a4fe07af-a8e8-447d-bf53-2762054291d4"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wisermigration"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-02 08:47:26.645551+07"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastupdatedby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plafon_UpdateJS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastupdatedon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-01 11:36:52.647+07"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"Tgltambahanplafonexpired"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"hp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08154036179</span><span class="se">\/</span><span class="s2">081379632186"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-5'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
+</tr>
+<tr>
+<td>tokoidwarisan</td>
+<td>string</td>
+<td>Id toko warisan</td>
+</tr>
+<tr>
+<td>tokoidwarisanlama</td>
+<td>string</td>
+<td>Id toko warisan lama</td>
+</tr>
+<tr>
+<td>kodetoko</td>
+<td>string</td>
+<td>Kode toko</td>
+</tr>
+<tr>
+<td>namatoko</td>
+<td>string</td>
+<td>Nama toko</td>
+</tr>
+<tr>
+<td>alamat</td>
+<td>string</td>
+<td>Alamat toko</td>
+</tr>
+<tr>
+<td>propinsi</td>
+<td>string</td>
+<td>Propinsi toko</td>
+</tr>
+<tr>
+<td>kota</td>
+<td>string</td>
+<td>Kota toko</td>
+</tr>
+<tr>
+<td>kecamatan</td>
+<td>string</td>
+<td>Kecamatan toko</td>
+</tr>
+<tr>
+<td>customwilayah</td>
+<td>string</td>
+<td>Wilayah toko</td>
+</tr>
+<tr>
+<td>telp</td>
+<td>string</td>
+<td>Nomor telepon toko</td>
+</tr>
+<tr>
+<td>fax</td>
+<td>string</td>
+<td>Nomor fax toko</td>
+</tr>
+<tr>
+<td>penanggungjawab</td>
+<td>string</td>
+<td>Nama penganggung jawab toko</td>
+</tr>
+<tr>
+<td>tgldob</td>
+<td>date</td>
+<td>Tanggal berdirinya toko</td>
+</tr>
+<tr>
+<td>catatan</td>
+<td>string</td>
+<td>Catatan toko</td>
+</tr>
+<tr>
+<td>statusaktif</td>
+<td>boolean</td>
+<td>Status aktif atau tidaknya toko, jika aktif akan bernilai true, jika tidak akan bernilai false.</td>
+</tr>
+<tr>
+<td>pemilik</td>
+<td>string</td>
+<td>Pemilik toko</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>Gender pemilik toko</td>
+</tr>
+<tr>
+<td>tempatlahir</td>
+<td>string</td>
+<td>Tempat lahir pemilik toko</td>
+</tr>
+<tr>
+<td>tgllahir</td>
+<td>date</td>
+<td>Tanggal lahir pemilik toko</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email pemilik toko</td>
+</tr>
+<tr>
+<td>norekening</td>
+<td>string</td>
+<td>Nomor rekening pemilik toko</td>
+</tr>
+<tr>
+<td>namabank</td>
+<td>string</td>
+<td>Nama bank pamilik toko</td>
+</tr>
+<tr>
+<td>nonpwp</td>
+<td>string</td>
+<td>Nomor npwp pemilik toko</td>
+</tr>
+<tr>
+<td>tipebisnis</td>
+<td>string</td>
+<td>Tipe bisnis</td>
+</tr>
+<tr>
+<td>isarowid</td>
+<td>string</td>
+<td>Dihasilkan secara otomatis pada saat penginputan id.</td>
+</tr>
+<tr>
+<td>createdby</td>
+<td>string</td>
+<td>Yang membuat detail toko</td>
+</tr>
+<tr>
+<td>createdon</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika membuat detail toko</td>
+</tr>
+<tr>
+<td>lastupdateby</td>
+<td>string</td>
+<td>Yang terakhir mengupdate detail toko</td>
+</tr>
+<tr>
+<td>lastupdateon</td>
+<td>datetime</td>
+<td>Tanggal dan waktu terakhir detail toko diupdate</td>
+</tr>
+<tr>
+<td>Tgltambahanplafonexpired</td>
+<td>date</td>
+<td>Tanggal tambahan plafon kedaluwarsa</td>
+</tr>
+<tr>
+<td>hp</td>
+<td>string</td>
+<td>Nomor hp pemilik toko</td>
+</tr>
+</tbody></table>
+<h2 id='toko-summary-piutang'>TOKO :: SUMMARY PIUTANG</h2>
+<p>Endpoint ini menampilkan semua info data piutang dan tagihan.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://paycoll.javasign.id/api/piutang</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/piutang</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-5'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data piutang"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"saldoTotalPiutang"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jatuhTempo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"blmJatuhTempo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tanggalBayarTerakhir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-06"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nota"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nonota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IKO1180"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nomnota"</span><span class="p">:</span><span class="w"> </span><span class="mi">3465000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tgljt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-05-01"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"saldoPtg"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nonota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IKO0125"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nomnota"</span><span class="p">:</span><span class="w"> </span><span class="mi">13300000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tgljt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-04-06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"saldoPtg"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"tgltrans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nomtrans"</span><span class="p">:</span><span class="w"> </span><span class="mi">6889600</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kodetrans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRN"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"tgltrans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-06"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nomtrans"</span><span class="p">:</span><span class="w"> </span><span class="mi">5288320</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"kodetrans"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRN"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-6'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>saldoTotalPiutang</td>
+<td>integer</td>
+<td>Total saldo piutang user</td>
+</tr>
+<tr>
+<td>jatuhTempo</td>
+<td>integer</td>
+<td>username untuk user</td>
+</tr>
+<tr>
+<td>blmJatuhTempo</td>
+<td>integer</td>
+<td>Password untuk user</td>
+</tr>
+<tr>
+<td>tanggalBayarTerakhir</td>
+<td>date</td>
+<td>Tanggal bayar terakhir piutang user</td>
+</tr>
+<tr>
+<td><strong>nota</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>nonota</td>
+<td>string</td>
+<td>Nomor nota</td>
+</tr>
+<tr>
+<td>nomnota</td>
+<td>string</td>
+<td>Nominal nota</td>
+</tr>
+<tr>
+<td>tgljt</td>
+<td>date</td>
+<td>Tanggal jatuh tempo</td>
+</tr>
+<tr>
+<td>saldoPtg</td>
+<td>integer</td>
+<td>Saldo piutang</td>
+</tr>
+<tr>
+<td><strong>bayar</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tgltrans</td>
+<td>date</td>
+<td>Tanggal transfer</td>
+</tr>
+<tr>
+<td>nomtrans</td>
+<td>integer</td>
+<td>Nominal transfer</td>
+</tr>
+<tr>
+<td>kodetrans</td>
+<td>string</td>
+<td>Kode transfer</td>
+</tr>
+</tbody></table>
+<h2 id='toko-request-dikunjungi'>TOKO :: REQUEST DIKUNJUNGI</h2>
+<p>Endpoint ini memberikan informasi tentang toko yang mengirimkan request untuk dikunjungi. Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST http://paycoll.javasign.id/api/request/create</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/piutang</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+
+
+
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aku mau bayar nih 2"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-6'>Request</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>keterangan</td>
+<td>string</td>
+<td>Y</td>
+<td>Keterangan dari user ketika meminta dikunjungi</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"request has been saved"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"tokoid"</span><span class="p">:</span><span class="w"> </span><span class="mi">20886</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andreastesting"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tglrequest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aku mau bayar nih 2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 09:16:55"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 09:16:55"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-7'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tokoid</td>
+<td>integer</td>
+<td>Id toko</td>
+</tr>
+<tr>
+<td>tglrequest</td>
+<td>date</td>
+<td>Tanggal ketika mengirim request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>keterangan</td>
+<td>string</td>
+<td>Keterangan ketika mengirim request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika mengupdate request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika membuat request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
+</tr>
+</tbody></table>
+<h2 id='toko-request-dikunjungi-list'>TOKO :: REQUEST DIKUNJUNGI LIST</h2>
+<p>Endpoint ini menampilkan semua info data yang mengirim permintaan untuk dikunjungi.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET http://paycoll.javasign.id/api/request/list</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/piutang</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-7'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data request"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"request"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tokoid"</span><span class="p">:</span><span class="w"> </span><span class="mi">20886</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tglrequest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aku mau bayar lho"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andreastesting"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 06:24:50"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 06:24:50"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tokoid"</span><span class="p">:</span><span class="w"> </span><span class="mi">20886</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tglrequest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oooo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"andreastesting"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 08:11:32"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 08:11:32"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-8'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
+</tr>
+<tr>
+<td>tokoid</td>
+<td>integer</td>
+<td>Id toko</td>
+</tr>
+<tr>
+<td>tglrequest</td>
+<td>date</td>
+<td>Tanggal ketika mengirim request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>keterangan</td>
+<td>string</td>
+<td>Keterangan ketika mengirim request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>createdby</td>
+<td>string</td>
+<td>Yang membuat request</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika membuat request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika mengupdate request untuk dikunjungi</td>
+</tr>
+</tbody></table>
+<h2 id='toko-list-bank'>TOKO :: LIST BANK</h2>
+<p>Endpoint ini menampilkan semua list bank. Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET http://paycoll.javasign.id/api/bank</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/piutang</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-8'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">915</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namabankdankota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANDIRI BEKASI"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">916</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namabankdankota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIPPO GARUT"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">917</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namabankdankota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BII CIKARANG"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">918</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namabankdankota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCA SURABAYA"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">919</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namabankdankota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DANAMON SINGKAWANG"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">920</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"namabankdankota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCA PEKAN BARU"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-9'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id bank</td>
+</tr>
+<tr>
+<td>namabankdankota</td>
+<td>string</td>
+<td>Nama bank dan kota dari bank tersebut</td>
+</tr>
+</tbody></table>
+<h1 id='collector'>Collector</h1>
+<p>Perantara antara perusahaan yang menjual sparepart kendaraan bermotor dengan toko.</p>
+<h2 id='collector-login'>COLLECTOR :: LOGIN</h2>
+<p>Layanan ini digunakan oleh user untuk login, dan ketika return client akan mendapatkan <code>api_token</code>. Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST http://paycoll.javasign.id/api/login</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">apikey</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">client_secret</span><span class="p">]</span><span class="w">
+
+
+
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C-09106"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Admin1234"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-9'>Request</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>Y</td>
+<td>username untuk user</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Y</td>
+<td>password untuk user</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"userinfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C-09106"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJpdiI6Ikt1NnUxN3pNbEdBUFQ5Y1wvUHJOdVlBPT0iLCJ2YWx1ZSI6IjJCZVNPVUVCTWhWRG5ia1h4azZ1SUE9PSIsIm1hYyI6IjM3MGRkZTY1ZGYyYjZmOGZmZTFkYTcxZmZlZTBhZWE0ZjNiZWE4NzUyNGE4MWNiMDU5MDlkZWVkY2M2NjdlMDkifQ=="</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"typeuser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collector"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"api_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aAU7XGzxjaZxYMwSD5HfeKRBX0otzV42yc9JcJmiXxa22UY4CdxRIj000308"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"remember_token"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"userid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-30 14:23:25"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastupdatedby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-19 08:30:53"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nama"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AGUNG PARIANTO"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-10'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>username untuk user</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Password untuk user</td>
+</tr>
+<tr>
+<td>typeuser</td>
+<td>string</td>
+<td>Tipe user, apakah toko atau collector</td>
+</tr>
+<tr>
+<td>api_token</td>
+<td>string</td>
+<td>Encrypted text dari user yang dijadikan identifikasi saat request</td>
+</tr>
+<tr>
+<td>status</td>
+<td>boolean</td>
+<td>Status user ketika login, jika benar maka true, jika tidak maka false</td>
+</tr>
+<tr>
+<td>remember_token</td>
+<td>string</td>
+<td>Untuk fitur remember login</td>
+</tr>
+<tr>
+<td>userid</td>
+<td>integer</td>
+<td>Jika login sebagai toko maka id toko, jika login sebagai collector maka id collector</td>
+</tr>
+<tr>
+<td>createdby</td>
+<td>string</td>
+<td>Yang membuat user</td>
+</tr>
+<tr>
+<td>createdon</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika user dibuat</td>
+</tr>
+<tr>
+<td>lastupdateby</td>
+<td>string</td>
+<td>Yang terakhir mengupdate updated_at datetime Tanggal dan waktu ketika user diupdate</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika user diupdate</td>
+</tr>
+<tr>
+<td>nama</td>
+<td>string</td>
+<td>Nama user</td>
+</tr>
+</tbody></table>
+<h2 id='collector-setor-post'>COLLECTOR :: SETOR (POST)</h2>
+<p>Endpoint ini memberi informasi tentang uang yang sudah disetorkan ke bank. Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>POST http://paycoll.javasign.id/api/sync</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+
+
+
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"setoruang"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"berita"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbbb"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nama_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bri"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tanggal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-05"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-10'>Request</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>nominal</td>
+<td>integer</td>
+<td>Y</td>
+<td>Nominal yang telah disetorkan</td>
+</tr>
+<tr>
+<td>berita</td>
+<td>string</td>
+<td>Y</td>
+<td>Berita ketika menyetorkan uang</td>
+</tr>
+<tr>
+<td>nama_bank</td>
+<td>string</td>
+<td>Y</td>
+<td>Nama bank</td>
+</tr>
+<tr>
+<td>tanggal</td>
+<td>date</td>
+<td>Y</td>
+<td>Tanggal menyetorkan uang</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sync success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"setoruang"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"berita"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbbb"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nama_bank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bri"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tanggal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-05"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"hasilPembayaran"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-11'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>setorUang</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>nominal</td>
+<td>integer</td>
+<td>Nominal yang telah disetorkan</td>
+</tr>
+<tr>
+<td>berita</td>
+<td>string</td>
+<td>Berita ketika menyetorkan uang</td>
+</tr>
+<tr>
+<td>nama_bank</td>
+<td>string</td>
+<td>Nama bank</td>
+</tr>
+<tr>
+<td>tanggal</td>
+<td>date</td>
+<td>Tanggal menyetorkan uang</td>
+</tr>
+</tbody></table>
+<h2 id='collector-setor-uang'>COLLECTOR :: SETOR UANG</h2>
+<p>Endpoint ini menampilkan semua info data toko yang telah menyetorkan uang.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET http://paycoll.javasign.id/api/setoruang/lists</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/piutang</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-11'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"register"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"collectorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tgltransfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"04-09-2017"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominaltransfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9020000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beritatransfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pembayaran toko SARANG DIESEL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"namabank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04 13:30:55"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastupdatedby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SYSTEM"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-04 13:30:55"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"collectorid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1111</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tgltransfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"05-09-2017"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominaltransfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"200"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beritatransfer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaa"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"namabank"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"createdby"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lastupdatedby"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-12'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
+</tr>
+<tr>
+<td>collectorid</td>
+<td>integer</td>
+<td>Id collector</td>
+</tr>
+<tr>
+<td>tgltransfer</td>
+<td>date</td>
+<td>Tanggal ketika transfer</td>
+</tr>
+<tr>
+<td>nominaltransfer</td>
+<td>string</td>
+<td>Nominal uang yang ditransfer</td>
+</tr>
+<tr>
+<td>beritatransfer</td>
+<td>string</td>
+<td>Berita ketika transfer</td>
+</tr>
+<tr>
+<td>createdby</td>
+<td>string</td>
+<td>Yang membuat request</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika membuat request untuk dikunjungi</td>
+</tr>
+<tr>
+<td>lastupdateby</td>
+<td>string</td>
+<td>Yang terakhir mengupdate</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika mengupdate request untuk dikunjungi</td>
+</tr>
+</tbody></table>
+<h2 id='collector-bayar'>COLLECTOR :: BAYAR</h2>
+<p>Endpoint ini memberi informasi tentang data toko yang telah membayar serta jenis pembayarannya. Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>POST http://paycoll.javasign.id/api/sync</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+
+
+
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"idtoko"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tgl_bayar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-19"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aku bayar nih"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"total_bayar"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"jenis_pembayaran"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KAS"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"total_bayar"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"jenis_pembayaran"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BGC"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"no_bgc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no_bgc"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"jenis_bgc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jenis_bgc"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"tgl_jatuh_tempo_bgc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-19"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-12'>Request</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>bayar</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>idtoko</td>
+<td>integer</td>
+<td>Y</td>
+<td>Id toko</td>
+</tr>
+<tr>
+<td>tgl_bayar</td>
+<td>date</td>
+<td>Y</td>
+<td>Tanggal melakukan pembayaran</td>
+</tr>
+<tr>
+<td>keterangan</td>
+<td>string</td>
+<td>Y</td>
+<td>Keterangan ketika membayar</td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>total_bayar</td>
+<td>integer</td>
+<td>Y</td>
+<td>Total ketika membayar</td>
+</tr>
+<tr>
+<td>jenis_pembayaran</td>
+<td>string</td>
+<td>Y</td>
+<td>Jenis pembayaran</td>
+</tr>
+<tr>
+<td>total_bayar</td>
+<td>integer</td>
+<td>Y</td>
+<td>Total ketika membayar</td>
+</tr>
+<tr>
+<td>jenis_pembayaran</td>
+<td>string</td>
+<td>Y</td>
+<td>Jenis pembayaran</td>
+</tr>
+<tr>
+<td>no_bgc</td>
+<td>string</td>
+<td>Y</td>
+<td>Nomor bilyet giro</td>
+</tr>
+<tr>
+<td>jenis_bgc</td>
+<td>string</td>
+<td>Y</td>
+<td>Jenis bilyet giro</td>
+</tr>
+<tr>
+<td>tgl_jatuh_tempo_bgc</td>
+<td>date</td>
+<td>Y</td>
+<td>Tanggal jatuh tempo bilyet giro</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sync success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"setoruang"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"idtoko"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tgl_bayar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-19"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aku bayar nih"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"total_bayar"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"jenis_pembayaran"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KAS"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"total_bayar"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"jenis_pembayaran"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BGC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"no_bgc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no_bgc"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"jenis_bgc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jenis_bgc"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tgl_jatuh_tempo_bgc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-19"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"hasilTagihan"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-13'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>bayar</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>idtoko</td>
+<td>integer</td>
+<td>Id toko</td>
+</tr>
+<tr>
+<td>tgl_bayar</td>
+<td>date</td>
+<td>Tanggal melakukan pembayaran</td>
+</tr>
+<tr>
+<td>keterangan</td>
+<td>string</td>
+<td>Keterangan ketika membayar</td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>total_bayar</td>
+<td>integer</td>
+<td>Total ketika membayar</td>
+</tr>
+<tr>
+<td>jenis_pembayaran</td>
+<td>string</td>
+<td>Jenis pembayaran</td>
+</tr>
+<tr>
+<td>total_bayar</td>
+<td>integer</td>
+<td>Total ketika membayar</td>
+</tr>
+<tr>
+<td>jenis_pembayaran</td>
+<td>string</td>
+<td>Jenis pembayaran</td>
+</tr>
+<tr>
+<td>no_bgc</td>
+<td>string</td>
+<td>Nomor bilyet giro</td>
+</tr>
+<tr>
+<td>jenis_bgc</td>
+<td>string</td>
+<td>Jenis bilyet giro</td>
+</tr>
+<tr>
+<td>tgl_jatuh_tempo_bgc</td>
+<td>date</td>
+<td>Tanggal jatuh tempo bilyet giro</td>
+</tr>
+</tbody></table>
+<h2 id='collector-status-pembayaran'>COLLECTOR :: STATUS PEMBAYARAN</h2>
+<p>Endpoint ini menampilkan semua info data status pembayaran, baik tunai maupun giro.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET http://paycoll.javasign.id/api/pembayaran/status</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/piutang</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-13'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data status"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"tunaiDiTangan"</span><span class="p">:</span><span class="w"> </span><span class="mi">10023020</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tunaiDiSetor"</span><span class="p">:</span><span class="w"> </span><span class="mi">9020870</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tunaiDiTransfer"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"giro"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"144476"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nomorGiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1010101"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nomorGiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1323123"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nomorGiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1323123"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-14'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>tunaiDiTangan</td>
+<td>integer</td>
+<td>Jumlah nominal tunai yang ada ditangan</td>
+</tr>
+<tr>
+<td>tunaiDiSetor</td>
+<td>integer</td>
+<td>Jumlah nominal tunai yang disetor</td>
+</tr>
+<tr>
+<td>tunaiDiTransfer</td>
+<td>integer</td>
+<td>Jumlah nominal tunai yang ditransfer giro</td>
+</tr>
+<tr>
+<td>nominal</td>
+<td>string</td>
+<td>Nominal yang telah dibayarkan</td>
+</tr>
+<tr>
+<td>nomorGiro</td>
+<td>string</td>
+<td>Nomor giro</td>
+</tr>
+</tbody></table>
+<h2 id='collector-hasil-tagihan'>COLLECTOR :: HASIL TAGIHAN</h2>
+<p>Endpoint ini memberikan informasi tentang toko yang sudah membayar. Request anda harus berisi informasi berikut</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>POST http://paycoll.javasign.id/api/sync</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">POST</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/login</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+
+
+
+
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"hasiltagihan"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"idtoko"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tgl_tagih"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-22"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"keterangan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bri"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='request-14'>Request</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Required</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>idtoko</td>
+<td>integer</td>
+<td>Y</td>
+<td>Id toko</td>
+</tr>
+<tr>
+<td>tgl_tagih</td>
+<td>date</td>
+<td>Y</td>
+<td>Tanggal ketika melakukan penagihan</td>
+</tr>
+<tr>
+<td>keterangan</td>
+<td>string</td>
+<td>Y</td>
+<td>Keterangan ketika melakukan penagihan</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sync success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"setoruang"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"hasilPembayaran"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"tokoid"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tgltagih"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-22"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"keterangantagih"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bri"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 09:18:53"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-28 09:18:53"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-15'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>hasilPembayaran</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>tokoid</td>
+<td>integer</td>
+<td>Id toko</td>
+</tr>
+<tr>
+<td>tgltagih</td>
+<td>date</td>
+<td>Tanggal ketika melakukan penagihan</td>
+</tr>
+<tr>
+<td>keterangantagih</td>
+<td>string</td>
+<td>Keterangan ketika melakukan penagihan</td>
+</tr>
+<tr>
+<td>updated_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika</td>
+</tr>
+<tr>
+<td>mengupdate</td>
+<td>hasil</td>
+<td>pembayaran</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>datetime</td>
+<td>Tanggal dan waktu ketika membuat hasil pembayaran</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id hasil pembayaran</td>
+</tr>
+</tbody></table>
+<h2 id='collector-register-index'>COLLECTOR :: REGISTER INDEX</h2>
+<p>Endpoint ini menampilkan semua tagihan beserta nota dan detailnya</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET http://paycoll.javasign.id/api/register/lists</code></p>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">GET</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//paycoll.javasign.id/api/piutang</span><span class="w"> </span><span class="err">HTTP/</span><span class="mf">1.1</span><span class="w">
+</span><span class="err">Host</span><span class="p">:</span><span class="w"> </span><span class="err">paycoll.javasign.id</span><span class="w">
+</span><span class="err">Content-Type</span><span class="p">:</span><span class="w"> </span><span class="err">application/json</span><span class="w">
+</span><span class="err">accesstoken</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">access_token</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='request-15'>Request</h3>
+<p>Tidak ada parameter yang dibutuhkan. Hanya request header.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data found"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"register"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"noreg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6105900"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tglreg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21-10-2016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">27847</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nota"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"nama"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PERKASA MOTOR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"wilayah"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hb-0091"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"TokoIDWiser"</span><span class="p">:</span><span class="w"> </span><span class="mi">24844</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tokoIDISA"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001231"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1350000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountPaidTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"listnota"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"kartupiutangid"</span><span class="p">:</span><span class="w"> </span><span class="mi">168429</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"detailId"</span><span class="p">:</span><span class="w"> </span><span class="mi">914264</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tglJthtempo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27-07-2011"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tglNota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27-04-2011"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rptagih"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1350000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"nonota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IFB0958"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"nama"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUDI MOTOR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"wilayah"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hb-0091"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"undefined"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"TokoIDWiser"</span><span class="p">:</span><span class="w"> </span><span class="mi">17131</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tokoIDISA"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1045595"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">1209000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountPaidTotal"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"listnota"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"kartupiutangid"</span><span class="p">:</span><span class="w"> </span><span class="mi">265608</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"detailId"</span><span class="p">:</span><span class="w"> </span><span class="mi">914279</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tglJthtempo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23-09-2014"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tglNota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21-06-2014"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rptagih"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1195000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"nonota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IME1083"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"kartupiutangid"</span><span class="p">:</span><span class="w"> </span><span class="mi">265609</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"detailId"</span><span class="p">:</span><span class="w"> </span><span class="mi">914282</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tglJthtempo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22-09-2015"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"tglNota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-06-2015"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"rptagih"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"bayar"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"nonota"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IKE1382"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-16'>Response</h3>
+<table><thead>
+<tr>
+<th>Nama</th>
+<th>Tipe Data</th>
+<th>Deskripsi</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>noreg</td>
+<td>string</td>
+<td>Nomor registrasi user</td>
+</tr>
+<tr>
+<td>tglreg</td>
+<td>date</td>
+<td>Tanggal registrasi user</td>
+</tr>
+<tr>
+<td>id</td>
+<td>integer</td>
+<td>Id user</td>
+</tr>
+<tr>
+<td><strong>nota</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>nama</td>
+<td>string</td>
+<td>Nama toko yang ada pada nota</td>
+</tr>
+<tr>
+<td>wilayah</td>
+<td>string</td>
+<td>Wilayah toko yang ada pada nota</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Password saat login</td>
+</tr>
+<tr>
+<td>TokoIDWiser</td>
+<td>integer</td>
+<td>Value id dari tabel toko</td>
+</tr>
+<tr>
+<td>tokoIDISA</td>
+<td>string</td>
+<td>Value dari tokoidwarisan</td>
+</tr>
+<tr>
+<td>amountTotal</td>
+<td>integer</td>
+<td>Total amount tagihan</td>
+</tr>
+<tr>
+<td>amountPaidTotal</td>
+<td>integer</td>
+<td>Total yang dibayarkan dari tagihan</td>
+</tr>
+<tr>
+<td><strong>listnota</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>kartupiutangid</td>
+<td>integer</td>
+<td>Id kartu piutang</td>
+</tr>
+<tr>
+<td>detailId</td>
+<td>integer</td>
+<td>Id dari tagihan detail</td>
+</tr>
+<tr>
+<td>tglJthtempo</td>
+<td>date</td>
+<td>Tanggal jatuh tempo</td>
+</tr>
+<tr>
+<td>tglNota</td>
+<td>date</td>
+<td>Tanggal yang ada pada nota</td>
+</tr>
+<tr>
+<td>rptagih</td>
+<td>string</td>
+<td>Jumlah tagihan</td>
+</tr>
+<tr>
+<td>bayar</td>
+<td>integer</td>
+<td>Jumlah yang dibayarkan</td>
+</tr>
+<tr>
+<td>nonota</td>
+<td>string</td>
+<td>Nomor nota</td>
 </tr>
 </tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="HTTP">HTTP</a>
           </div>
       </div>
     </div>
